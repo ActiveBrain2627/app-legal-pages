@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+  :root {
+    --bg: #F5F6F8;
+    --surface: #FFFFFF;
+    --text: #1B2430;
+    --text-muted: #5B6472;
+    --accent: #4C6FE0;
+    --accent-soft: #EBF0FE;
+    --border: #E1E4EA;
+    --warn: #B5580A;
+    --warn-soft: #FBF0E3;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #12141F;
+      --surface: #1C1F2E;
+      --text: #E7E9EF;
+      --text-muted: #9AA3B2;
+      --accent: #7DA2FF;
+      --accent-soft: #202844;
+      --border: #2A2E40;
+      --warn: #E0A458;
+      --warn-soft: #2E2416;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #12141F;
+    --surface: #1C1F2E;
+    --text: #E7E9EF;
+    --text-muted: #9AA3B2;
+    --accent: #7DA2FF;
+    --accent-soft: #202844;
+    --border: #2A2E40;
+    --warn: #E0A458;
+    --warn-soft: #2E2416;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    margin: 4px 0 0;
+    text-wrap: balance;
+  }
+
+  .meta {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .lede {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin: 24px 0 0;
+    max-width: 60ch;
+  }
+
+  section { margin-top: 40px; }
+
+  .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+
+  h2 {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 2px 0 12px;
+    padding-left: 8px;
+    border-left: 3px solid var(--accent);
+  }
+  h2 .num { display: block; margin-bottom: 2px; }
+
+  h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 20px 0 8px;
+    color: var(--text);
+  }
+
+  p { margin: 0 0 14px; max-width: 65ch; }
+  p:last-child { margin-bottom: 0; }
+
+  ul { margin: 0 0 14px; padding-left: 22px; max-width: 65ch; }
+  li { margin-bottom: 6px; }
+
+  strong { color: var(--text); font-weight: 600; }
+
+  table {
+    width: 100%;
+    max-width: 65ch;
+    border-collapse: collapse;
+    margin: 8px 0 18px;
+    font-size: 0.95rem;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+  .tablewrap { overflow-x: auto; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-size: 0.95rem;
+  }
+  .callout p { margin: 0; max-width: none; }
+
+  .warn {
+    background: var(--warn-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--warn);
+    border-radius: 8px;
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-size: 0.95rem;
+  }
+  .warn p { margin: 0; max-width: none; }
+  .warn strong { color: var(--warn); }
+
+  .fill {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9em;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  a { color: var(--accent); }
+
+  @media (max-width: 480px) {
+    h1 { font-size: 1.7rem; }
+  }
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <span class="eyebrow">60 Second Puzzles</span>
+    <h1>Terms of Service</h1>
+    <div class="meta">Effective date: <span class="fill">September 4, 2026</span> &nbsp;·&nbsp; Last updated: <span class="fill">September 4, 2026</span></div>
+  </div>
+
+  <p class="lede">These Terms govern your use of 60 Second Puzzles. By downloading, installing, or using the app, you agree to them. Please read them before playing.</p>
+
+  <section>
+    <h2><span class="num">1</span>Eligibility</h2>
+    <p>You must be at least <strong>13 years old</strong> to use this app. By using it, you confirm you meet this requirement. This app is not directed at children under 13, and we do not knowingly permit their use.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>What this app is — and isn't</h2>
+    <p>60 Second Puzzles offers casual arithmetic and logic puzzles for entertainment and general mental engagement.</p>
+    <div class="warn">
+      <p><strong>This app is not a medical device, therapy, or scientifically validated cognitive treatment.</strong> We make no claim that playing this app improves memory, intelligence, prevents cognitive decline, or produces any specific real-world outcome. Nothing in the app is medical, psychological, or professional advice. If you have concerns about your cognitive health, consult a qualified healthcare professional — do not rely on this app as a substitute.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>License to use the app</h2>
+    <p>We grant you a personal, non-exclusive, non-transferable, revocable license to use 60 Second Puzzles on devices you own or control, for your own personal, non-commercial use. You may not copy, modify, reverse-engineer, redistribute, or create derivative works from the app except as permitted by applicable law.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Free tier and ads</h2>
+    <p>The free version of the app includes a limited number of timed challenges per day and displays advertisements via Google AdMob, including banner and interstitial ads. Ad content is selected and served by Google and its advertising partners; we do not control the specific content of individual ads.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Premium subscription</h2>
+    <p>A premium subscription removes ads and unlocks additional features (unlimited timed challenges, advanced operations, and detailed stats). Subscriptions are billed and managed through the Apple App Store or Google Play, as applicable.</p>
+    <div class="tablewrap">
+      <table>
+        <tr><th>Plan</th><th>Price</th><th>Billing</th></tr>
+        <tr><td>Monthly</td><td><span class="fill">$4.99</span></td><td>Auto-renews monthly until cancelled</td></tr>
+        <tr><td>Annual</td><td><span class="fill">$19.99</span></td><td>Auto-renews yearly until cancelled</td></tr>
+      </table>
+    </div>
+    <ul>
+      <li>Subscriptions <strong>automatically renew</strong> unless cancelled at least 24 hours before the current period ends.</li>
+      <li>Manage or cancel your subscription any time in your Apple ID or Google Play account settings — not through us directly.</li>
+      <li>Refunds are handled according to Apple's and Google's own refund policies; we do not process refunds directly and generally cannot override their decisions.</li>
+      <li>Prices may change with notice; changes apply to future billing periods, not periods already paid for.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>Acceptable use</h2>
+    <p>You agree not to: reverse-engineer or tamper with the app to bypass paywalls, ad delivery, or licensing; use automated tools (bots, scripts) to interact with the app; interfere with the app's operation or other users' ability to use it; or use the app for any unlawful purpose.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>Intellectual property</h2>
+    <p>The app, including its design, code, puzzle content, and branding, is owned by us or our licensors and protected by intellectual property laws. Nothing in these Terms transfers any ownership to you beyond the limited license in Section 3.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">8</span>Disclaimer of warranties</h2>
+    <p>The app is provided <strong>"as is" and "as available,"</strong> without warranties of any kind, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee the app will be uninterrupted, error-free, or secure.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">9</span>Limitation of liability</h2>
+    <p>To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, arising from your use of the app. Our total liability for any claim relating to the app will not exceed the amount you paid us in the 12 months before the claim arose (or <span class="fill">$0</span> if you used only the free tier).</p>
+  </section>
+
+  <section>
+    <h2><span class="num">10</span>Termination</h2>
+    <p>We may suspend or terminate your access to the app if you violate these Terms. You may stop using the app and uninstall it at any time; this does not automatically cancel an active subscription, which must be cancelled through your Apple ID or Google Play account.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">11</span>Changes to these Terms</h2>
+    <p>We may update these Terms as the app evolves. We'll update the "Last updated" date above when we do. Continuing to use the app after a change means you accept the updated Terms.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">12</span>Governing law</h2>
+    <p>These Terms are governed by the laws of <span class="fill">North Carolina, United States</span>, without regard to conflict-of-law principles, except where applicable consumer protection law requires otherwise.</p>
+  </section>
+
+  <section>
+    <h2><span class="num">13</span>Contact us</h2>
+    <p>Questions about these Terms? Reach us at <span class="fill">sixtysecondpuzzles.app@proton.me</span>.</p>
+  </section>
+
+  <div class="callout">
+    <p><strong>Note:</strong> This draft was written specifically for how 60 Second Puzzles actually works, including a clause distinguishing casual entertainment from validated cognitive-training claims — a distinction that has drawn real regulatory attention in this app category (e.g., the FTC's 2016 settlement with Lumosity over unsubstantiated brain-training claims). It's a solid starting point, not a substitute for review by a qualified attorney before public release, especially given the real-money subscription and multi-country distribution.</p>
+  </div>
+
+  <footer>60 Second Puzzles — Terms of Service</footer>
+</div>
+
+
+</body>
+</html>
