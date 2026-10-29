@@ -157,7 +157,6 @@
     color: var(--text-muted);
     font-weight: 500;
   }
-  .tablewrap { overflow-x: auto; }
 
   .callout {
     background: var(--accent-soft);
@@ -198,6 +197,20 @@
   }
   .masthead { align-items: center; text-align: center; }
   .brand { font-family: 'Nunito', system-ui, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.2; color: var(--text); margin: 0 0 10px; }
+
+  .tablewrap { margin: 18px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.92rem; line-height: 1.5; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  th { background: var(--accent-soft); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  @media (max-width: 560px) {
+    table, tbody, tr, td { display: block; width: 100%; }
+    table { border: none; background: none; }
+    tr:first-child { display: none; }
+    tr { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; margin: 0 0 10px; padding: 4px 0; }
+    td { border-bottom: none; padding: 4px 14px; }
+    td::before { content: attr(data-label); display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em; }
+  }
 </style>
 
 </head>
@@ -245,8 +258,8 @@
     <div class="tablewrap">
       <table>
         <tr><th>Plan</th><th>Price (US)</th><th>Billing</th></tr>
-        <tr><td>Monthly</td><td><span class="fill">$4.99</span></td><td>Auto-renews monthly until cancelled</td></tr>
-        <tr><td>Annual</td><td><span class="fill">$29.99</span></td><td>Auto-renews yearly until cancelled</td></tr>
+        <tr><td data-label="Plan">Monthly</td><td data-label="Price (US)"><span class="fill">$4.99</span></td><td data-label="Billing">Auto-renews monthly until cancelled</td></tr>
+        <tr><td data-label="Plan">Annual</td><td data-label="Price (US)"><span class="fill">$29.99</span></td><td data-label="Billing">Auto-renews yearly until cancelled</td></tr>
       </table>
     </div>
     <ul>
@@ -347,11 +360,11 @@
     <div class="tablewrap">
       <table>
         <tr><th>Who</th><th>Responsible for</th></tr>
-        <tr><td><strong>The developer of 60 Second Puzzles</strong></td><td>The puzzles and the app's functionality; bug fixes and support by email (on a reasonable-efforts basis); these Terms and our Privacy Policy; deciding Premium's price and features; the small amount of data the app stores on your device.</td></tr>
-        <tr><td><strong>Apple</strong> (App Store) / <strong>Google</strong> (Google Play)</td><td>Distributing the app and its updates; your Apple ID or Google account; taking payment and calculating taxes; renewing, managing, and cancelling subscriptions; refunds; sending price-change notices and collecting consent to price increases where required; Family Sharing, if applicable; their own privacy practices.</td></tr>
-        <tr><td><strong>Google AdMob</strong> and its advertising partners</td><td>Choosing and serving ads and their content; ad-consent and tracking prompts and ad personalization; their own data practices.</td></tr>
-        <tr><td><strong>Our subscription provider</strong></td><td>Confirming your subscription status with Apple or Google on our behalf; its own data practices.</td></tr>
-        <tr><td><strong>You</strong></td><td>Keeping your device and account secure; cancelling before renewal if you do not want to renew; tapping "Restore Purchases" when you change devices; following these Terms; being at least 13 years old.</td></tr>
+        <tr><td data-label="Who"><strong>The developer of 60 Second Puzzles</strong></td><td data-label="Responsible for">The puzzles and the app's functionality; bug fixes and support by email (on a reasonable-efforts basis); these Terms and our Privacy Policy; deciding Premium's price and features; the small amount of data the app stores on your device.</td></tr>
+        <tr><td data-label="Who"><strong>Apple</strong> (App Store) / <strong>Google</strong> (Google Play)</td><td data-label="Responsible for">Distributing the app and its updates; your Apple ID or Google account; taking payment and calculating taxes; renewing, managing, and cancelling subscriptions; refunds; sending price-change notices and collecting consent to price increases where required; Family Sharing, if applicable; their own privacy practices.</td></tr>
+        <tr><td data-label="Who"><strong>Google AdMob</strong> and its advertising partners</td><td data-label="Responsible for">Choosing and serving ads and their content; ad-consent and tracking prompts and ad personalization; their own data practices.</td></tr>
+        <tr><td data-label="Who"><strong>Our subscription provider</strong></td><td data-label="Responsible for">Confirming your subscription status with Apple or Google on our behalf; its own data practices.</td></tr>
+        <tr><td data-label="Who"><strong>You</strong></td><td data-label="Responsible for">Keeping your device and account secure; cancelling before renewal if you do not want to renew; tapping "Restore Purchases" when you change devices; following these Terms; being at least 13 years old.</td></tr>
       </table>
     </div>
     <p>Apple and Google are not parties to these Terms (except as described in Section 15 for Apple), have no obligation to provide support for the app, and are not responsible for its content. To the extent permitted by law, we are not responsible for the acts or omissions of Apple, Google, AdMob, or our subscription provider, or for problems with billing, refunds, cancellations, price-change notices, or ad content that those companies control.</p>
