@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
 <title>Support</title>
-<link rel="icon" href="icon.png?v=108">
-<link rel="apple-touch-icon" href="icon.png?v=108">
+<link rel="icon" href="icon.png?v=108b">
+<link rel="apple-touch-icon" href="icon.png?v=108b">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
@@ -175,7 +175,9 @@
   }
 
   footer a:hover { color: var(--accent); text-decoration-color: var(--accent); }
-  .app-icon { display: block; width: 72px; height: 72px; border-radius: 16px; margin: 0 0 14px; }
+  .app-icon { display: block; width: 128px; height: 128px; margin: 0 auto 2px; }
+  /* Same size as the app's Home icon: 128 pt, 96 pt on short phones (BrandMark.tsx useIconPx). */
+  @media (max-height: 739px) { .app-icon { width: 96px; height: 96px; } }
   .masthead { align-items: center; text-align: center; }
   .brand { font-family: 'Nunito', system-ui, sans-serif; font-weight: 700; font-size: 34px; line-height: 1.2; color: var(--text); margin: 0 0 10px; }
   .topic a { color: var(--accent); }
@@ -185,7 +187,7 @@
 
 <div class="wrap">
   <div class="masthead">
-    <img class="app-icon" src="icon.png?v=108" width="84" height="84" style="display:block;border-radius:19px;margin:0 0 2px" alt="60 Second Puzzles app icon">
+    <img class="app-icon" src="icon.png?v=108b" width="128" height="128" alt="60 Second Puzzles app icon">
     <span class="brand">60 Second Puzzles</span>
     <h1>Support</h1>
     <p class="lede">Questions, bug reports, or ideas for new puzzle types — here's how to reach us.</p>
